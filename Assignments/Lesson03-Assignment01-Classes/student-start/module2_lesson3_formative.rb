@@ -20,16 +20,7 @@ class Person
     #accept a `last_name` parameter
     #search the `people` class attribute for instances with the same `last_name`
     #return a collection of matching instances
-    @name =[]
-    i = 0
-    @@people.each do |lname|
-      if lname.last_name == last_name
-        @name[i] = lname
-        i += 1
-      end
-    end
-    @name
-   # @@people.find {|lname| lname.last_name == last_name}
+    @@people.select{|person| person.last_name == last_name}
   end
 
   #have a `to_s` method to return a formatted string of the person's name
