@@ -7,10 +7,13 @@
 		<th>Social Rank</th>
 	</tr>
 	<%@recipes.each do |recipe|%>
-	<tr>
+	<tr class=<%=cycle("even", "odd")%>>
 		<td><%= link_to(image_tag(recipe["image_url"], size:"100x100"), recipe["f2f_url"]) %></td>
-		<td><%= link_to(sanitize(recipe["title"]), recipe["f2f_url"]) %></td>
+		<td class="title"><%= link_to(sanitize(recipe["title"]), recipe["f2f_url"], target:"_blank")%></td>
 		<td><%= recipe["social_rank"] %></td>
 	</tr>
 	<%end%>
 </table>
+<p id="food2fork">
+	<a href="http://www.food2fork.com" target="_blank">Powered By Food2Fork.com</a>
+</p>
